@@ -5,6 +5,7 @@ date: "2019-03-04"
 output: github_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -19,35 +20,41 @@ By using *mpg* dataset:
 
 - Color
 ```{r}
-
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = displ))
 ```
 
 - Size
 ```{r}
-
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, size = displ))
 ```
 
 - Shape
 ```{r}
-
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = hwy, y = class, shape = class ))
 ```
 
 
 2. What happens if you map the same variable to multiple aesthetics?
 
 ```{r}
-
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, pl = displ))
 ```
 
 
 3. What does the stroke aesthetic do? What shapes does it work with? (Hint: use ?geom_point)
 
 ```{r}
-
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, stroke = displ))
 ```
 
 4. What happens if you map an aesthetic to something other than a variable name, like aes(colour = displ < 5)?
 
 ```{r}
-
+geom_point(mapping = aes(colour = displ < 5))
 ```
+

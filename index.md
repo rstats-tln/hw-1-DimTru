@@ -48,10 +48,8 @@ ggplot(data = mpg) +
 
 ``` r
 ggplot(data = mpg) +
-  geom_point(mapping = aes(x = displ, y = hwy, pl = displ))
+  geom_point(mapping = aes(x = displ, y = hwy, color = displ, size = displ))
 ```
-
-    ## Warning: Ignoring unknown aesthetics: pl
 
 ![](index_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
@@ -67,10 +65,8 @@ ggplot(data = mpg) +
 1.  What happens if you map an aesthetic to something other than a variable name, like aes(colour = displ &lt; 5)?
 
 ``` r
-geom_point(mapping = aes(colour = displ < 5))
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = class, y = hwy, colour = displ < 2))
 ```
 
-    ## mapping: colour = ~displ < 5 
-    ## geom_point: na.rm = FALSE
-    ## stat_identity: na.rm = FALSE
-    ## position_identity
+![](index_files/figure-markdown_github/unnamed-chunk-7-1.png)
